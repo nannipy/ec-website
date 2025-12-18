@@ -1,36 +1,75 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# EC Website - Building the Future with Precision
 
-## Getting Started
+A modern, high-performance construction and renovation showcase platform built with precision and aesthetic excellence. This project serves as a digital portfolio for EC, highlighting their expertise in historical restoration and high-end residential projects.
 
-First, run the development server:
+## 🚀 Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- **Dynamic Hero Section**: Impactful landing with smooth animations and curated imagery.
+- **Project Showcase**: A masonry-style gallery featuring high-end restoration and residential projects.
+- **Interactive Forms**: Seamless contact and inquiry system with real-time validation.
+- **Responsive Design**: Fluid experience across all devices, from mobile to desktop.
+- **Performance Optimized**: Built on Next.js 16 for lightning-fast delivery and optimal SEO.
+
+## 🛠️ Tech Stack
+
+- **Framework**: [Next.js 16](https://nextjs.org/) (App Router, Turbopack)
+- **Styling**: [Tailwind CSS 4](https://tailwindcss.com/)
+- **Animations**: [Framer Motion](https://www.framer.com/motion/)
+- **Icons**: [Lucide React](https://lucide.dev/)
+- **UI Components**: [Radix UI](https://www.radix-ui.com/) & [Shadcn UI](https://ui.shadcn.com/)
+- **Type Safety**: [TypeScript](https://www.typescriptlang.org/)
+- **Runtime**: [Bun](https://bun.sh/)
+
+## 🏗️ Architecture
+
+The project follows a clean, component-based architecture for maximum maintainability:
+
+```text
+├── app/               # Next.js App Router (Pages & Layouts)
+├── components/        # React Components
+│   ├── ui/            # Primitive UI components (Shadcn)
+│   ├── layout/        # Shared layout elements (Header, Footer)
+│   └── features/      # Business-specific components (Hero, Gallery)
+├── data/              # Static data and project metadata
+├── lib/               # Shared utilities and helper functions
+└── public/            # Static assets (Images, Videos, Fonts)
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚦 Getting Started
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Prerequisites
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- [Bun](https://bun.sh/) (recommended) or Node.js
 
-## Learn More
+### Installation
 
-To learn more about Next.js, take a look at the following resources:
+1.  **Clone the repository**:
+    ```bash
+    git clone https://github.com/nannipy/ec-website.git
+    cd EC
+    ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+2.  **Install dependencies**:
+    ```bash
+    bun install
+    ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+3.  **Run the development server**:
+    ```bash
+    bun dev
+    ```
 
-## Deploy on Vercel
+4.  **Build for production**:
+    ```bash
+    bun run build
+    ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📈 Performance & SEO
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Image Optimization**: Using `next/image` for automatic format selection and lazy loading.
+- **Semantic HTML**: Proper heading hierarchy and landmark elements for accessibility.
+- **Speed**: leveraging Next.js static rendering and streaming for instant page loads.
+
+## 📄 License
+
+This project is private and confidential. All rights reserved.
