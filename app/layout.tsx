@@ -1,14 +1,8 @@
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import type { Metadata } from "next";
-import { Inter, Syne } from "next/font/google";
+import { Syne, Fragment_Mono, Roboto_Mono } from "next/font/google";
 import "./globals.css";
-
-const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
-  display: "swap",
-});
 
 const syne = Syne({
   variable: "--font-syne",
@@ -16,9 +10,22 @@ const syne = Syne({
   display: "swap",
 });
 
+const fragmentMono = Fragment_Mono({
+  variable: "--font-fragment-mono",
+  subsets: ["latin"],
+  weight: "400",
+  display: "swap",
+});
+
+const robotoMono = Roboto_Mono({
+  variable: "--font-roboto-mono",
+  subsets: ["latin"],
+  display: "swap",
+});
+
 export const metadata: Metadata = {
-  title: "EC Srl - Edilizia e Restauro",
-  description: "Ricostruiamo il tuo spazio. Esperti in restauri a Roma.",
+  title: "EDOCLA S.R.L.S. - Costruiamo valore, ristrutturiamo futuro.",
+  description: "Impresa edile a Roma specializzata in costruzioni, ristrutturazioni complete, impianti elettrici e idraulici.",
 };
 
 export default function RootLayout({
@@ -29,7 +36,7 @@ export default function RootLayout({
   return (
     <html lang="it" className="scroll-smooth">
       <body
-        className={`${inter.variable} ${syne.variable} antialiased flex flex-col min-h-screen`}
+        className={`${syne.variable} ${fragmentMono.variable} ${robotoMono.variable} antialiased flex flex-col min-h-screen font-sans`}
       >
         <Header />
         <main className="flex-1">
