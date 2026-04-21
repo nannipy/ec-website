@@ -6,7 +6,7 @@ export function Hero() {
   return (
     <section id="home" className="relative w-full min-h-screen bg-brand-offwhite pt-[140px] pb-[100px] overflow-hidden">
       {/* Image Grid */}
-      <div className="container mx-auto px-[51px]">
+      <div className="w-full px-[51px]">
         <div className="flex gap-[15px] h-[400px] mb-[36px]">
           <div className="w-[349px] h-full overflow-hidden">
             <img src="/hero1.png" alt="Progetto" className="w-full h-full object-cover" />
@@ -28,20 +28,24 @@ export function Hero() {
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="font-sans font-bold text-[128px] leading-[109px] tracking-[-2.56px] text-brand-black uppercase max-w-[1000px]"
+            className="font-sans font-bold text-[110px] leading-[109px] tracking-[-2.56px] text-brand-black uppercase w-full"
           >
-            Costruiamo valore <br />
-            ristrutturiamo futuro.
-          </motion.h1>
+            <div>Costruiamo valore</div>
 
-          <div className="flex justify-between items-start mt-[40px]">
-            <p className="font-sans text-[12px] leading-[12px] text-brand-black max-w-[350px] text-justify">
-              Precisione, affidabilità, qualità. sempre.
-            </p>
-            <p className="font-sans text-[12px] leading-[12px] text-brand-black max-w-[206px]">
-              Impresa edile a Roma specializzata in costruzioni, ristrutturazioni complete, impianti elettrici e idraulici, posa pavimenti e soluzioni chiavi in mano.
-            </p>
-          </div>
+            <div className="flex items-center gap-[40px] w-full">
+              <span>ristrutturiamo</span>
+              <p className="font-sans font-normal text-[12px] leading-[14px] tracking-normal normal-case text-brand-black max-w-[210px] text-left">
+                Impresa edile a Roma specializzata in costruzioni, ristrutturazioni complete, impianti elettrici e idraulici, posa pavimenti e soluzioni chiavi in mano.
+              </p>
+            </div>
+
+            <div className="flex items-baseline gap-[40px] w-full">
+              <span>futuro.</span>
+              <p className="font-sans font-normal text-[12px] leading-[12px] tracking-normal normal-case text-brand-black whitespace-nowrap">
+                Precisione, affidabilità, qualità. sempre.
+              </p>
+            </div>
+          </motion.h1>
         </div>
       </div>
 

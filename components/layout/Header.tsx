@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu } from "lucide-react";
-import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
@@ -19,7 +18,7 @@ import {
 const navigation = [
   { name: "CHI SIAMO", href: "#chi-siamo" },
   { name: "SERVIZI", href: "#servizi" },
-  { name: "PROGETTAZIONI", href: "/progetti" },
+  { name: "PROCESSI", href: "#processi" },
 ];
 
 export function Header() {

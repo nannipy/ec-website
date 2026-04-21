@@ -38,7 +38,7 @@ const steps = [
 
 export function Process() {
   return (
-    <section id="processo" className="relative w-full bg-brand-black pt-[89px] pb-[91px] overflow-hidden">
+    <section id="processi" className="relative w-full bg-brand-black pt-[89px] pb-[91px] overflow-hidden">
       <div className="container mx-auto px-[51px]">
         <p className="font-mono text-[12px] text-brand-offwhite mb-[89px]">
           // IL NOSTRO PROCESSO
