@@ -6,26 +6,26 @@ import { Button } from "@/components/ui/button";
 export function ContactForm() {
   return (
     <section id="contattaci" className="relative w-full bg-brand-offwhite py-[91px] overflow-hidden">
-      <div className="container mx-auto px-[50px]">
-        <p className="font-roboto-mono text-[12px] text-brand-orange mb-[84px]">
+      <div className="container mx-auto">
+        <p className="font-roboto-mono text-[12px] text-brand-orange mb-[60px] md:mb-[84px]">
           // CONTATTACI
         </p>
 
-        <div className="flex flex-col md:flex-row gap-[123px] items-start">
+        <div className="flex flex-col lg:flex-row gap-12 lg:gap-[123px] items-start">
           {/* Image */}
-          <div className="w-full md:w-[585px] h-[415px] overflow-hidden">
+          <div className="w-full lg:w-[585px] aspect-[16/11] lg:h-[415px] overflow-hidden">
             <img src="/progetti/progetto-28.png" alt="Contact" className="w-full h-full object-cover" />
           </div>
 
           {/* Form */}
-          <form className="flex-1 w-full max-w-[703px] flex flex-col gap-[30px] items-end" onSubmit={(e) => e.preventDefault()}>
+          <form className="flex-1 w-full lg:max-w-[703px] flex flex-col gap-[30px] items-end" onSubmit={(e) => e.preventDefault()}>
             <div className="w-full flex flex-col gap-[20px]">
               <div className="flex flex-col gap-[4px] border-b border-brand-black/20 pb-1">
                 <label className="font-sans text-[12px] text-brand-black uppercase">NOME</label>
                 <input
                   type="text"
                   placeholder="Il tuo nome"
-                  className="bg-transparent border-none p-0 font-sans italic text-[12px] text-brand-black focus:outline-none placeholder:text-brand-black/30"
+                  className="bg-transparent border-none p-0 font-sans italic text-[14px] text-brand-black focus:outline-none placeholder:text-brand-black/30"
                 />
               </div>
 
@@ -34,7 +34,7 @@ export function ContactForm() {
                 <input
                   type="email"
                   placeholder="La tua mail"
-                  className="bg-transparent border-none p-0 font-sans italic text-[12px] text-brand-black focus:outline-none placeholder:text-brand-black/30"
+                  className="bg-transparent border-none p-0 font-sans italic text-[14px] text-brand-black focus:outline-none placeholder:text-brand-black/30"
                 />
               </div>
 
@@ -43,7 +43,7 @@ export function ContactForm() {
                 <input
                   type="tel"
                   placeholder="Il tuo numero"
-                  className="bg-transparent border-none p-0 font-sans italic text-[12px] text-brand-black focus:outline-none placeholder:text-brand-black/30"
+                  className="bg-transparent border-none p-0 font-sans italic text-[14px] text-brand-black focus:outline-none placeholder:text-brand-black/30"
                 />
               </div>
 
@@ -52,7 +52,7 @@ export function ContactForm() {
                 <input
                   type="text"
                   placeholder="Il servizio che cerchi"
-                  className="bg-transparent border-none p-0 font-sans italic text-[12px] text-brand-black focus:outline-none placeholder:text-brand-black/30"
+                  className="bg-transparent border-none p-0 font-sans italic text-[14px] text-brand-black focus:outline-none placeholder:text-brand-black/30"
                 />
               </div>
 
@@ -60,12 +60,12 @@ export function ContactForm() {
                 <label className="font-sans text-[12px] text-brand-black uppercase">DESCRIZIONE</label>
                 <textarea
                   placeholder="Descrizione aggiuntiva del progetto"
-                  className="bg-transparent border-none p-0 font-sans italic text-[12px] text-brand-black focus:outline-none placeholder:text-brand-black/30 resize-none h-auto"
+                  className="bg-transparent border-none p-0 font-sans italic text-[14px] text-brand-black focus:outline-none placeholder:text-brand-black/30 resize-none h-[60px]"
                 />
               </div>
             </div>
 
-            <Button className="bg-brand-orange hover:bg-brand-orange/90 text-white rounded-none border-none h-auto py-[10px] px-[10px] font-mono text-[12px] uppercase">
+            <Button className="bg-brand-orange hover:bg-brand-orange/90 text-white rounded-none border-none h-auto py-[12px] px-[24px] font-mono text-[12px] uppercase w-full sm:w-auto">
               CONTATTACI
             </Button>
           </form>

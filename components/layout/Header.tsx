@@ -36,8 +36,8 @@ export function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50">
       <div className={cn(
-        "w-full flex items-center justify-between px-[51px] py-[36px] transition-all duration-300",
-        scrolled ? "bg-brand-black/80 backdrop-blur-md py-4" : "bg-transparent"
+        "w-full flex items-center justify-between px-5 md:px-[51px] py-6 md:py-[36px] transition-all duration-300",
+        scrolled ? "bg-brand-black/90 backdrop-blur-md py-4" : "bg-transparent"
       )}>
 
         {/* Logo */}
