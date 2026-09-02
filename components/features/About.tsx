@@ -1,13 +1,12 @@
 "use client";
 
-import { motion } from "framer-motion";
 
 export function About() {
   return (
     <section id="chi-siamo" className="relative w-full bg-brand-orange py-[91px] overflow-hidden">
       <div className="container mx-auto">
         <p className="font-mono text-[12px] text-white mb-[40px] md:mb-[66px]">
-          // CHI SIAMO?
+          {"// CHI SIAMO?"}
         </p>
 
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-[123px] items-start mb-[50px]">
@@ -31,10 +30,10 @@ export function About() {
 
           <div className="flex-1 flex flex-col sm:flex-row gap-[5px] w-full h-auto sm:h-[385px]">
             <div className="w-full sm:w-[349px] aspect-square sm:aspect-auto h-full overflow-hidden">
-              <img src="chisiamo1.png" alt="About" className="w-full h-full object-cover" />
+              <img src="/chisiamo1.png" alt="Chi siamo - EDOCLA" className="w-full h-full object-cover" />
             </div>
             <div className="hidden sm:flex flex-1 aspect-square sm:aspect-auto h-full overflow-hidden">
-              <img src="chisiamo2.png" alt="About" className="w-full h-full object-cover" />
+              <img src="/chisiamo2.png" alt="Chi siamo - EDOCLA" className="w-full h-full object-cover" />
             </div>
           </div>
         </div>

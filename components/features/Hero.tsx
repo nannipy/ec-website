@@ -63,7 +63,7 @@ export function Hero() {
           rel="noopener noreferrer"
           className="w-[46px] h-[46px] bg-brand-orange flex items-center justify-center hover:scale-110 transition-transform shadow-lg"
         >
-          <img src="whatsapp.png" alt="whatsapp" className="w-8 h-8" />
+          <img src="/whatsapp.png" alt="WhatsApp EDOCLA" className="w-8 h-8" />
         </a>
       </div>
     </section>

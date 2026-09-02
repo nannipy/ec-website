@@ -22,7 +22,7 @@ export function Banner() {
                   <span className="font-sans font-bold text-[32px] text-brand-black tracking-[-0.96px] uppercase">
                     {item}
                   </span>
-                  <span className="font-sans font-bold text-[32px] text-brand-black">//</span>
+                  <span className="font-sans font-bold text-[32px] text-brand-black">{"//"}</span>
                 </div>
               ))}
             </div>

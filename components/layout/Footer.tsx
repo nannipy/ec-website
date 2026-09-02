@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+
 export function Footer() {
   return (
     <footer className="w-full bg-brand-black overflow-hidden">
@@ -63,8 +65,17 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-16 lg:mt-8 text-[10px] text-white/30 font-mono">
+        <div className="mt-16 lg:mt-8 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 text-[10px] text-white/40 font-mono">
           <p>© {new Date().getFullYear()} EDOCLA S.R.L.S. - P.IVA 17926131002</p>
+          <div className="flex items-center gap-4">
+            <Link href="/privacy-policy" className="hover:text-brand-orange transition-colors">
+              Privacy Policy
+            </Link>
+            <span>•</span>
+            <Link href="/cookie-policy" className="hover:text-brand-orange transition-colors">
+              Cookie Policy
+            </Link>
+          </div>
         </div>
       </div>
     </footer>

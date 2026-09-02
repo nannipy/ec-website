@@ -56,7 +56,7 @@ export function Services() {
     <section id="servizi" className="relative w-full bg-brand-offwhite py-[91px] overflow-hidden border-t border-brand-black/10">
       <div className="container mx-auto">
         <p className="font-mono text-[12px] text-brand-orange mb-[60px] md:mb-[92px]">
-        // SERVIZI
+          {"// SERVIZI"}
         </p>
 
         <div className="flex flex-col">

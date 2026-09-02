@@ -1,7 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
-
 const steps = [
   {
     number: "1",
@@ -41,7 +39,7 @@ export function Process() {
     <section id="processi" className="relative w-full bg-brand-black pt-[89px] pb-[91px] overflow-hidden">
       <div className="container mx-auto">
         <p className="font-mono text-[12px] text-brand-offwhite mb-[60px] md:mb-[89px]">
-          // IL NOSTRO PROCESSO
+          {"// IL NOSTRO PROCESSO"}
         </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-[5px]">
