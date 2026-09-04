@@ -1,8 +1,41 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
 
+// In-memory rate limiting by client IP
+const rateLimitMap = new Map<string, { count: number; lastReset: number }>();
+const RATE_LIMIT_WINDOW_MS = 60 * 1000; // 1 minute
+const MAX_REQUESTS_PER_WINDOW = 5; // max 5 requests per minute per IP
+
+function isRateLimited(ip: string): boolean {
+  const now = Date.now();
+  const record = rateLimitMap.get(ip);
+
+  if (!record || now - record.lastReset > RATE_LIMIT_WINDOW_MS) {
+    rateLimitMap.set(ip, { count: 1, lastReset: now });
+    return false;
+  }
+
+  if (record.count >= MAX_REQUESTS_PER_WINDOW) {
+    return true;
+  }
+
+  record.count += 1;
+  return false;
+}
+
 export async function POST(request: Request) {
   try {
+    // 1. IP extraction & Rate limiting
+    const forwardedFor = request.headers.get("x-forwarded-for");
+    const clientIp = forwardedFor ? forwardedFor.split(",")[0].trim() : "unknown-ip";
+
+    if (clientIp !== "unknown-ip" && isRateLimited(clientIp)) {
+      return NextResponse.json(
+        { error: "Troppe richieste inviate. Riprova tra un minuto." },
+        { status: 429 }
+      );
+    }
+
     const apiKey = process.env.RESEND_API_KEY;
     if (!apiKey) {
       return NextResponse.json(
@@ -13,11 +46,66 @@ export async function POST(request: Request) {
 
     const resend = new Resend(apiKey);
     const body = await request.json();
-    const { name, email, phone, service, message } = body;
+    const { name, email, phone, service, message, honeypot } = body;
 
-    if (!name || !email) {
+    // 2. Honeypot check: Bots will fill this hidden input
+    if (honeypot) {
+      // Return 200 OK silently to deceive spambots without sending email
+      return NextResponse.json({ success: true });
+    }
+
+    // 3. Required fields validation
+    if (!name || typeof name !== "string" || !name.trim()) {
       return NextResponse.json(
-        { error: "Nome ed email sono campi obbligatori." },
+        { error: "Il nome è obbligatorio." },
+        { status: 400 }
+      );
+    }
+
+    if (!email || typeof email !== "string" || !email.trim()) {
+      return NextResponse.json(
+        { error: "L'email è obbligatoria." },
+        { status: 400 }
+      );
+    }
+
+    // 4. Email format validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email.trim())) {
+      return NextResponse.json(
+        { error: "Indirizzo email non valido." },
+        { status: 400 }
+      );
+    }
+
+    // 5. Length constraints (DoS / buffer prevention)
+    if (name.length > 100) {
+      return NextResponse.json(
+        { error: "Il nome supera la lunghezza massima consentita (100 caratteri)." },
+        { status: 400 }
+      );
+    }
+    if (email.length > 150) {
+      return NextResponse.json(
+        { error: "L'email supera la lunghezza massima consentita." },
+        { status: 400 }
+      );
+    }
+    if (phone && (typeof phone !== "string" || phone.length > 30)) {
+      return NextResponse.json(
+        { error: "Il numero di telefono non è valido o troppo lungo." },
+        { status: 400 }
+      );
+    }
+    if (service && (typeof service !== "string" || service.length > 100)) {
+      return NextResponse.json(
+        { error: "Il campo servizio supera la lunghezza massima consentita." },
+        { status: 400 }
+      );
+    }
+    if (message && (typeof message !== "string" || message.length > 3000)) {
+      return NextResponse.json(
+        { error: "Il messaggio supera la lunghezza massima consentita (3000 caratteri)." },
         { status: 400 }
       );
     }

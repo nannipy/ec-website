@@ -11,6 +11,7 @@ export function ContactForm() {
     phone: "",
     service: "",
     message: "",
+    honeypot: "",
   });
 
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
@@ -50,6 +51,7 @@ export function ContactForm() {
         phone: "",
         service: "",
         message: "",
+        honeypot: "",
       });
     } catch (err: unknown) {
       setStatus("error");
@@ -76,6 +78,20 @@ export function ContactForm() {
 
           {/* Form */}
           <form className="flex-1 w-full lg:max-w-[703px] flex flex-col gap-[30px] items-end" onSubmit={handleSubmit}>
+            {/* Honeypot field - Hidden from human users, lures automated bots */}
+            <div className="hidden" aria-hidden="true">
+              <label htmlFor="company_code">Non compilare questo campo</label>
+              <input
+                id="company_code"
+                name="honeypot"
+                type="text"
+                tabIndex={-1}
+                autoComplete="off"
+                value={formData.honeypot}
+                onChange={handleChange}
+              />
+            </div>
+
             <div className="w-full flex flex-col gap-[20px]">
               <div className="flex flex-col gap-[4px] border-b border-brand-black/20 pb-1">
                 <label htmlFor="name" className="font-sans text-[12px] text-brand-black uppercase">NOME *</label>
@@ -84,6 +100,7 @@ export function ContactForm() {
                   name="name"
                   type="text"
                   required
+                  maxLength={100}
                   value={formData.name}
                   onChange={handleChange}
                   placeholder="Il tuo nome"
@@ -98,6 +115,7 @@ export function ContactForm() {
                   name="email"
                   type="email"
                   required
+                  maxLength={150}
                   value={formData.email}
                   onChange={handleChange}
                   placeholder="La tua mail"
@@ -111,6 +129,7 @@ export function ContactForm() {
                   id="phone"
                   name="phone"
                   type="tel"
+                  maxLength={30}
                   value={formData.phone}
                   onChange={handleChange}
                   placeholder="Il tuo numero"
@@ -124,6 +143,7 @@ export function ContactForm() {
                   id="service"
                   name="service"
                   type="text"
+                  maxLength={100}
                   value={formData.service}
                   onChange={handleChange}
                   placeholder="Il servizio che cerchi"
@@ -136,6 +156,7 @@ export function ContactForm() {
                 <textarea
                   id="message"
                   name="message"
+                  maxLength={3000}
                   value={formData.message}
                   onChange={handleChange}
                   placeholder="Descrizione aggiuntiva del progetto"
