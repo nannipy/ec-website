@@ -1,5 +1,4 @@
-"use client";
-
+import Image from "next/image";
 
 export function About() {
   return (
@@ -19,7 +18,7 @@ export function About() {
                 Offriamo soluzioni complete per privati, aziende e condomini, seguendo ogni progetto dall’inizio alla consegna finale. Ogni intervento viene eseguito da professionisti qualificati, con materiali certificati e tecnologie aggiornate.
               </p>
             </div>
-            <br></br>
+            <br />
             <div className="w-full">
               <p className="font-sans text-[12px] text-white">
                 L’azienda basa i suoi valori sulla professionalità e il rispetto delle esigenze dei clienti.
@@ -29,16 +28,26 @@ export function About() {
           </div>
 
           <div className="flex-1 flex flex-col sm:flex-row gap-[5px] w-full h-auto sm:h-[385px]">
-            <div className="w-full sm:w-[349px] aspect-square sm:aspect-auto h-full overflow-hidden">
-              <img src="/chisiamo1.png" alt="Chi siamo - EDOCLA" className="w-full h-full object-cover" />
+            <div className="relative w-full sm:w-[349px] aspect-square sm:aspect-auto h-full overflow-hidden">
+              <Image
+                src="/chisiamo1.png"
+                alt="Chi siamo - EDOCLA"
+                fill
+                sizes="(max-width: 640px) 100vw, 349px"
+                className="object-cover"
+              />
             </div>
-            <div className="hidden sm:flex flex-1 aspect-square sm:aspect-auto h-full overflow-hidden">
-              <img src="/chisiamo2.png" alt="Chi siamo - EDOCLA" className="w-full h-full object-cover" />
+            <div className="relative hidden sm:flex flex-1 aspect-square sm:aspect-auto h-full overflow-hidden">
+              <Image
+                src="/chisiamo2.png"
+                alt="Chi siamo - EDOCLA"
+                fill
+                sizes="(max-width: 1024px) 50vw, 600px"
+                className="object-cover"
+              />
             </div>
           </div>
         </div>
-
-
       </div>
     </section>
   );

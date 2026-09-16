@@ -30,6 +30,36 @@ const nextConfig: NextConfig = {
           },
         ],
       },
+      {
+        source: "/llms.txt",
+        headers: [
+          {
+            key: "Content-Type",
+            value: "text/plain; charset=utf-8",
+          },
+        ],
+      },
+      {
+        source: "/llms-full.txt",
+        headers: [
+          {
+            key: "Content-Type",
+            value: "text/plain; charset=utf-8",
+          },
+        ],
+      },
+    ];
+  },
+  async rewrites() {
+    return [
+      {
+        source: "/.well-known/llms.txt",
+        destination: "/llms.txt",
+      },
+      {
+        source: "/.well-known/llms-full.txt",
+        destination: "/llms-full.txt",
+      },
     ];
   },
 };

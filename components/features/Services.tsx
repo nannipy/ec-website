@@ -55,9 +55,9 @@ export function Services() {
   return (
     <section id="servizi" className="relative w-full bg-brand-offwhite py-[91px] overflow-hidden border-t border-brand-black/10">
       <div className="container mx-auto">
-        <p className="font-mono text-[12px] text-brand-orange mb-[60px] md:mb-[92px]">
+        <h2 className="font-mono text-[12px] text-brand-orange mb-[60px] md:mb-[92px]">
           {"// SERVIZI"}
-        </p>
+        </h2>
 
         <div className="flex flex-col">
           {services.map((service) => {
@@ -66,7 +66,9 @@ export function Services() {
               <div key={service.id} className="group border-b border-brand-black/20">
                 <button
                   onClick={() => setOpenService(isOpen ? null : service.id)}
-                  className="w-full flex items-center justify-between py-[21px] text-left transition-colors"
+                  aria-expanded={isOpen}
+                  aria-controls={`service-content-${service.id}`}
+                  className="w-full flex items-center justify-between py-[21px] text-left transition-colors cursor-pointer"
                 >
                   <div className="flex items-center gap-6 md:gap-[102px]">
                     <span className="font-mono text-[12px] text-brand-black/50 group-hover:text-brand-orange transition-colors">
@@ -88,6 +90,7 @@ export function Services() {
                 <AnimatePresence>
                   {isOpen && service.subServices && (
                     <motion.div
+                      id={`service-content-${service.id}`}
                       initial={{ height: 0, opacity: 0 }}
                       animate={{ height: "auto", opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}

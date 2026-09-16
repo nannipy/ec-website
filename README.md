@@ -1,4 +1,4 @@
-# EC Website - Building the Future with Precision
+# EDOCLA Website - Building the Future with Precision
 
 A modern, high-performance construction and renovation showcase platform built with precision and aesthetic excellence. This project serves as a digital portfolio for EC, highlighting their expertise in historical restoration and high-end residential projects.
 

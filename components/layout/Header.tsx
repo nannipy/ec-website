@@ -15,9 +15,9 @@ import {
 } from "@/components/ui/sheet";
 
 const navigation = [
-  { name: "CHI SIAMO", href: "#chi-siamo" },
-  { name: "SERVIZI", href: "#servizi" },
-  { name: "PROCESSI", href: "#processi" },
+  { name: "CHI SIAMO", href: "/#chi-siamo" },
+  { name: "SERVIZI", href: "/#servizi" },
+  { name: "PROCESSI", href: "/#processi" },
 ];
 
 export function Header() {
@@ -40,10 +40,11 @@ export function Header() {
       )}>
 
         {/* Logo */}
-        <Link href="/" className="relative z-[100] transition-colors">
-          <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg" className={cn("transition-colors", (scrolled || isOpen) ? "text-white fill-white" : "text-brand-black fill-brand-black")}>
+        <Link href="/" aria-label="EDOCLA S.R.L.S. - Torna alla Home" className="relative z-[100] transition-colors">
+          <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" className={cn("transition-colors", (scrolled || isOpen) ? "text-white fill-white" : "text-brand-black fill-brand-black")}>
             <path d="M51.9928 0H0V52H51.9928V33.7026H42.5878C39.6818 39.9449 33.3473 44.283 25.9964 44.283C17.665 44.283 10.6362 38.7065 8.43882 31.0898H52V0H51.9928ZM8.44597 20.9031C10.6505 13.2792 17.6721 7.7098 25.9964 7.7098C34.3207 7.7098 41.3566 13.2792 43.554 20.9031H8.43882H8.44597Z" fill="currentColor" />
           </svg>
+          <span className="sr-only">EDOCLA S.R.L.S. - Impresa Edile Roma</span>
         </Link>
 
         {/* Desktop Nav */}
@@ -61,7 +62,7 @@ export function Header() {
             </Link>
           ))}
           <Button asChild className="bg-brand-orange hover:bg-brand-orange/90 text-white rounded-none border-none h-auto py-[10px] px-[10px] font-mono text-[12px]">
-            <Link href="#contattaci">CONTATTACI</Link>
+            <Link href="/#contattaci">CONTATTACI</Link>
           </Button>
         </nav>
 
@@ -103,7 +104,7 @@ export function Header() {
                 ))}
                 <SheetClose asChild>
                   <Button asChild className="w-full bg-brand-orange text-white rounded-none font-mono">
-                    <Link href="#contattaci">CONTATTACI</Link>
+                    <Link href="/#contattaci">CONTATTACI</Link>
                   </Button>
                 </SheetClose>
               </nav>

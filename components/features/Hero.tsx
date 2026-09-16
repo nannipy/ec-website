@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 
 export function Hero() {
@@ -8,17 +9,43 @@ export function Hero() {
       {/* Image Grid */}
       <div className="w-full px-5 md:px-[51px]">
         <div className="grid grid-cols-2 md:flex gap-[10px] md:gap-[15px] h-auto md:h-[400px] mb-[36px]">
-          <div className="aspect-[4/5] md:w-[349px] md:h-full overflow-hidden">
-            <img src="/hero1.png" alt="Progetto" className="w-full h-full object-cover" />
+          <div className="relative aspect-[4/5] md:w-[349px] md:h-full overflow-hidden">
+            <Image
+              src="/hero1.png"
+              alt="Progetto Ristrutturazione EDOCLA 1"
+              fill
+              priority
+              sizes="(max-width: 768px) 50vw, 349px"
+              className="object-cover"
+            />
           </div>
-          <div className="aspect-[4/5] md:w-[349px] md:h-full overflow-hidden">
-            <img src="/hero2.png" alt="Progetto" className="w-full h-full object-cover" />
+          <div className="relative aspect-[4/5] md:w-[349px] md:h-full overflow-hidden">
+            <Image
+              src="/hero2.png"
+              alt="Progetto Ristrutturazione EDOCLA 2"
+              fill
+              priority
+              sizes="(max-width: 768px) 50vw, 349px"
+              className="object-cover"
+            />
           </div>
-          <div className="aspect-[4/5] md:w-[231px] md:h-full overflow-hidden">
-            <img src="/hero3.png" alt="Progetto" className="w-full h-full object-cover" />
+          <div className="relative aspect-[4/5] md:w-[231px] md:h-full overflow-hidden">
+            <Image
+              src="/hero3.png"
+              alt="Progetto Ristrutturazione EDOCLA 3"
+              fill
+              sizes="(max-width: 768px) 50vw, 231px"
+              className="object-cover"
+            />
           </div>
-          <div className="aspect-[4/5] md:flex-1 md:h-full overflow-hidden">
-            <img src="/hero4.png" alt="Progetto" className="w-full h-full object-cover" />
+          <div className="relative aspect-[4/5] md:flex-1 md:h-full overflow-hidden">
+            <Image
+              src="/hero4.png"
+              alt="Progetto Ristrutturazione EDOCLA 4"
+              fill
+              sizes="(max-width: 768px) 50vw, 400px"
+              className="object-cover"
+            />
           </div>
         </div>
 
@@ -63,7 +90,13 @@ export function Hero() {
           rel="noopener noreferrer"
           className="w-[46px] h-[46px] bg-brand-orange flex items-center justify-center hover:scale-110 transition-transform shadow-lg"
         >
-          <img src="/whatsapp.png" alt="WhatsApp EDOCLA" className="w-8 h-8" />
+          <Image
+            src="/whatsapp.png"
+            alt="WhatsApp EDOCLA"
+            width={32}
+            height={32}
+            className="w-8 h-8"
+          />
         </a>
       </div>
     </section>

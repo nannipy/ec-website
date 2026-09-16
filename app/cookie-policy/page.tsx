@@ -4,6 +4,9 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Cookie Policy | EDOCLA S.R.L.S.",
   description: "Informativa estesa sull'uso dei cookie e tecnologie similari ai sensi del GDPR e della Direttiva ePrivacy.",
+  alternates: {
+    canonical: "/cookie-policy",
+  },
 };
 
 export default function CookiePolicyPage() {

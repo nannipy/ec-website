@@ -1,5 +1,3 @@
-"use client";
-
 import Link from "next/link";
 
 export function Footer() {
@@ -59,9 +57,9 @@ export function Footer() {
           </div>
 
           <div className="flex justify-start lg:justify-end flex-1 w-full lg:pr-[60px] xl:pr-[100px]">
-            <h2 className="font-sans font-bold text-[60px] sm:text-[80px] lg:text-[110px] leading-none text-white select-none whitespace-nowrap">
+            <div aria-hidden="true" className="font-sans font-bold text-[60px] sm:text-[80px] lg:text-[110px] leading-none text-white select-none whitespace-nowrap">
               EDOCLA
-            </h2>
+            </div>
           </div>
         </div>
 

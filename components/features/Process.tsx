@@ -1,5 +1,3 @@
-"use client";
-
 const steps = [
   {
     number: "1",
@@ -38,13 +36,13 @@ export function Process() {
   return (
     <section id="processi" className="relative w-full bg-brand-black pt-[89px] pb-[91px] overflow-hidden">
       <div className="container mx-auto">
-        <p className="font-mono text-[12px] text-brand-offwhite mb-[60px] md:mb-[89px]">
+        <h2 className="font-mono text-[12px] text-brand-offwhite mb-[60px] md:mb-[89px]">
           {"// IL NOSTRO PROCESSO"}
-        </p>
+        </h2>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-[5px]">
           {steps.map((step, idx) => (
-            <div key={idx} className="flex flex-col gap-[12px] group cursor-pointer">
+            <div key={idx} className="flex flex-col gap-[12px] group">
               <div className="relative aspect-[350/458] w-full flex items-center justify-center overflow-hidden">
                 {step.number === "1" ? (
                   <>
@@ -92,10 +90,10 @@ export function Process() {
                 ) : null}
               </div>
               <div className="flex flex-col gap-[12px]">
-                <p className="font-sans text-[14px] leading-tight text-white uppercase transition-colors duration-300 group-hover:text-[#FD3F1F]">
+                <h3 className="font-sans text-[14px] leading-tight text-white uppercase transition-colors duration-300 group-hover:text-[#FD3F1F]">
                   {step.title}
-                </p>
-                <div className="flex flex-col gap-[12px] md:hidden group-hover:flex transition-all duration-300">
+                </h3>
+                <div className="flex flex-col gap-[12px] transition-all duration-300">
                   {step.paragraphs.map((p, pIdx) => (
                     <p key={pIdx} className="font-sans text-[12px] leading-relaxed text-[#E3E3E3]">
                       {p}
