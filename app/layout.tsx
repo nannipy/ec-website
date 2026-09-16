@@ -2,6 +2,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import type { Metadata } from "next";
 import { Syne, Fragment_Mono, Roboto_Mono } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 
 const syne = Syne({
@@ -35,6 +36,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="it" className="scroll-smooth">
+      <head>
+        <Script
+          defer
+          src="https://cloud.umami.is/script.js"
+          data-website-id="19889430-a011-4234-a055-a25c158b853d"
+        />
+      </head>
       <body
         className={`${syne.variable} ${fragmentMono.variable} ${robotoMono.variable} antialiased flex flex-col min-h-screen font-sans`}
       >
